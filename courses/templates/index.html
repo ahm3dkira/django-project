@@ -1,16 +1,115 @@
-<html>
-  <head>
-    <title>Band Listing</title>
-  </head>
-  <body>
-    <h1>All Bands</h1>
-    <!-- <ul>
-    {% for band in bands %}
-      <li>
-        <h2><a href="{{ band.get_absolute_url }}">{{ band.name }}</a></h2>
-        {% if band.can_rock %}<p>This band can rock!</p>{% endif %}
-      </li>
-    {% endfor %}
-    </ul> -->
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <style>
+  .banner {
+    width: 100vw;
+    min-height: 40vh;
+    max-height: calc(100vh - 60px);
+    position: relative;
+
+
+  }
+  .banner img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    /* position: relative; */
+    position: absolute;
+    z-index: -1;
+  }
+  .banner .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .main {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #b0e9df;
+    /* border-top: 2px solid #88888850; */
+    border-top: 2px solid #dee2e6;
+
+
+    
+  }
+  .main .sidebar {
+    width: 20%;
+    min-height: 100vh;
+    background-color: #c43535;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+  }
+  .main .main-overview {
+    width: 80%;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 20px 20px 0;
+    
+  }
+  .main .main-overview .container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    
+  }
+
+  </style>
+  
+  {% include 'partials/header.html' %}
+  <div class='banner'>
+    <img src="https://bafybeidmcszgafodimv54kjpzc4hmb2oe3oyk2vdb7ob52wdgp6esb7pyy.ipfs.dweb.link/5682737.jpg" alt="banner">
+    <div class='banner-content'>
+      <h1>Digital Learning</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quibusdam.</p>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-overview">
+      <div class="container">
+
+        <h1>Overview</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quibusdam.</p>
+    
+      </div>
+    </div>
+    <div class="sidebar">
+      <h1>Sidebar</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quibusdam.</p>
+  
+    </div>
+
+  </div>
+  <h1>welcome to courses app</h1>
+
+</body>
 </html>

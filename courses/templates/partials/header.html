@@ -1,0 +1,67 @@
+<style>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+}
+header.header {
+    height: 60px;
+    width: 100vw;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+header.header .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+header.header ul, header.header li {
+    list-style: none;
+    
+}
+header.header ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+header.header .logo a:hover {
+    color: #000;
+}
+header.header .nav {
+    display: flex;
+    align-items: center;
+}
+header.header .nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+header.header .nav a:hover {
+    color: #000;
+}
+
+
+
+</style>
+<header class="header">
+    <h3 class="logo">D Learning</h3>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Courses</a></li>
+            <li class="nav-item"><a href="#">About</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
+            <li class="nav-item"><a href="#">Login</a></li>
+        </ul>
+    </nav>
+</header>
