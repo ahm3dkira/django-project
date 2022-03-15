@@ -8,7 +8,3 @@ def index(request):
 def about(request):
     return HttpResponse("Hello, world. You're at the about page.")
 
-
-def courses(request):
-    # render the courses page
-    return render(request, 'courses.html')
