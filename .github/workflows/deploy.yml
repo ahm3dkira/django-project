@@ -20,4 +20,4 @@ jobs:
         PORT: ${{ secrets.PORT_S0 }}
         KEY: ${{ secrets.SSH_KEY_S0 }}
       with:
-        script: "cd /home/ubuntu/Git/django-project && git pull && sudo docker-compose -f docker-compose.yml up -d"
+        script: "cd /home/ubuntu/Git/django-project && git pull && sudo docker-compose -f docker-compose.yml restart"
