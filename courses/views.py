@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
@@ -10,7 +10,44 @@ def courses(request):
     # render the courses page
     return render(request, 'courses.html')
 
+coursesData = [
+    {
+        'id': '1',
+        'title': 'Data structures | Dr. khaled',
+        'description': 'Data structures are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
+        'image': 'data.png',
+        'time': '12 weeks',
+    },
+    {
+        'id': '2',
+        'title': 'Algorithms | Dr. khaled',
+        'description': 'Algorithms are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
+        'image': 'algo.png',
+        'time': '12 weeks',
+    },
+    {
+        'id': '3',
+        'title': 'Operating Systems | Dr. moahmed',
+        'description': 'Operating systems are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
+        'image': 'os.png',
+        'time': '12 weeks',
+    },
+
+    
+]
+
+def allCourses(request):
+    return render(request, 'allCourses.html', {'courses': coursesData})
 def course(request, course):
-    # render the course page
-    return render(request, 'course.html', {'course_name': course})
+    for i in coursesData:
+        if i['id'] == course:
+            return render(request, 'course.html', {'course': i})
+    return HttpResponse('Course not found')
+
+def removeCourse(request, course):
+    for i in coursesData:
+        if i['id'] == course:
+            coursesData.remove(i)
+            return HttpResponse('Course removed')
+    return HttpResponse('Course not found')
 
