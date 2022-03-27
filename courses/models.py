@@ -17,6 +17,8 @@ class Course(models.Model):
     added_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
+    price = models.IntegerField(default=0)
+    
     
 class Category(models.Model):
     name = models.CharField(max_length=50)
