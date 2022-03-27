@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
   <style>
+
   .banner {
     width: 100vw;
     min-height: 40vh;
@@ -85,7 +78,7 @@
 
   </style>
   
-  {% include 'partials/header.html' %}
+  {% comment %} {% include 'partials/header.html' %} {% endcomment %}
   <div class='banner'>
     <img src="https://bafybeidmcszgafodimv54kjpzc4hmb2oe3oyk2vdb7ob52wdgp6esb7pyy.ipfs.dweb.link/5682737.jpg" alt="banner">
     <div class='banner-content'>
@@ -96,10 +89,14 @@
   <div class="main">
     <div class="main-overview">
       <div class="container">
+      {% comment %}  {% endcomment %}
 
         <h1>Overview</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quibusdam.</p>
-    
+        <div class='nav'>
+          
+        </div>
+      {% comment %}  {% endcomment %}
       </div>
     </div>
     <div class="sidebar">
@@ -110,5 +107,5 @@
   </div>
   <h1>welcome to courses app</h1>
 
-</body>
+{% endblock %}
 </html>

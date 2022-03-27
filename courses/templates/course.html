@@ -3,6 +3,25 @@
 {% block content %}
   <h3>{{ course.title }}</h3>
   <p>{{ course.description }}</p>
+  {% comment %} {% if "by-weeks" == "By-weeks" %}
+    33
+  
+  {% elif "by-weeks" == "by-weeks" %}
+    44
+  {% else %}
+    55
+  {% endif %} {% endcomment %}
+  <ul>
+    {% for file in course.files %}
+    <li>
+      <a href='{{ file }}'> {{ file }} </a>
+    </li>
+    {% endfor %}
+  </ul>
   <a href="/all">all courses</a>
-{% endblock %}
 
+
+  <script>
+    console.log("x")
+  </script>
+{% endblock %}

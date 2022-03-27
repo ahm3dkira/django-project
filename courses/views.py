@@ -17,6 +17,12 @@ coursesData = [
         'description': 'Data structures are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'data.png',
         'time': '12 weeks',
+        'type': 'acadimc',
+        'files': [
+            "http://localhost:3000/55.pdf",
+            "http://localhost:3000/55888.pdf",
+            "http://localhost:3000/5dcdv55.pdf",
+        ]
     },
     {
         'id': '2',
@@ -24,6 +30,11 @@ coursesData = [
         'description': 'Algorithms are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'algo.png',
         'time': '12 weeks',
+        'files': [
+            "http://localhost:3000/uuuuu.pdf",
+            "http://localhost:3000/55888.pdf",
+            "http://localhost:3000/5dcdv55.pdf",
+        ]
     },
     {
         'id': '3',
@@ -31,6 +42,11 @@ coursesData = [
         'description': 'Operating systems are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'os.png',
         'time': '12 weeks',
+        'files': [
+            "http://localhost:3000/55.pdf",
+            "http://localhost:3000/85888.pdf",
+            "http://localhost:3000/5dcdv55.pdf",
+        ]
     },
 
     
