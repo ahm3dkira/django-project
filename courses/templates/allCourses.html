@@ -1,12 +1,49 @@
 {% extends "base.html" %}
 {% block title %} all courses {% endblock %}
 {% block content %}
-<ul>
+<style>
+  .fa-arrow-up, .fa-arrow-down{
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .all-courses{
+    margin-bottom: 20px;
+  }
+  .all-courses li{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+  }
+  .all-courses li .vote{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+  }
+  .all-courses li .vote .count {
+    padding: 2px;
+  }
+  .all-courses li .container{
+    width: 100%;
+    padding: 10px;
+  }
+</style>
+<ul class="all-courses">
   {% for course in courses %}
     <li>
-      <h3>{{ course.title }}</h3>
-      <p>{{ course.description }}</p>
-      <a href="/id/{{course.id}}">link</a>
+      <div class="vote">
+        <i class="fas fa-arrow-up"></i>
+        <span class="count">{{ course.votes }}</span>
+        <i class="fas fa-arrow-down"></i>
+      </div>
+      <div class="container">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <a href="/id/{{course.id}}">link</a>
+      </div>
     </li>
   {% endfor %}
 </ul>

@@ -18,6 +18,7 @@ coursesData = [
         'image': 'data.png',
         'time': '12 weeks',
         'type': 'acadimc',
+        'votes': '100',
         'files': [
             "http://localhost:3000/55.pdf",
             "http://localhost:3000/55888.pdf",
@@ -30,6 +31,7 @@ coursesData = [
         'description': 'Algorithms are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'algo.png',
         'time': '12 weeks',
+        'votes': '100',
         'files': [
             "http://localhost:3000/uuuuu.pdf",
             "http://localhost:3000/55888.pdf",
@@ -42,6 +44,7 @@ coursesData = [
         'description': 'Operating systems are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'os.png',
         'time': '12 weeks',
+        'votes': '100',
         'files': [
             "http://localhost:3000/55.pdf",
             "http://localhost:3000/85888.pdf",
