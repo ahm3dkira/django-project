@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-  <style>
+
+<style>
 
   .banner {
     width: 100vw;
@@ -76,10 +77,11 @@
     
   }
 
-  </style>
+</style>
   
-  {% comment %} {% include 'partials/header.html' %} {% endcomment %}
   <div class='banner'>
+    {% comment %} {% load static %} {% endcomment %}
+    {% comment %} <img src='{% static "images/banner.jpg" %}' alt='banner'> {% endcomment %}
     <img src="https://bafybeidmcszgafodimv54kjpzc4hmb2oe3oyk2vdb7ob52wdgp6esb7pyy.ipfs.dweb.link/5682737.jpg" alt="banner">
     <div class='banner-content'>
       <h1>Digital Learning</h1>
