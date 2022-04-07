@@ -9,4 +9,5 @@ urlpatterns = [
     path('id/<course>', views.course, name='courses'),
     path('id/<course>/remove', views.removeCourse, name='removeCourse'),
     path('all', views.allCourses, name='allCourses'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
