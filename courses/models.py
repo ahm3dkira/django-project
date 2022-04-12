@@ -14,7 +14,7 @@ class Course(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=300, default='No description')
     image = models.ImageField(upload_to='images/', null=True)
-    added_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    # added_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     price = models.IntegerField(default=0)

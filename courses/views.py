@@ -16,7 +16,7 @@ def courses(request):
 
 coursesData = [
     {
-        'id': '1',
+        'id': '101',
         'title': 'Data structures | Dr. khaled',
         'description': 'Data structures are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'data.png',
@@ -30,7 +30,7 @@ coursesData = [
         ]
     },
     {
-        'id': '2',
+        'id': '102',
         'title': 'Algorithms | Dr. khaled',
         'description': 'Algorithms are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'algo.png',
@@ -43,7 +43,7 @@ coursesData = [
         ]
     },
     {
-        'id': '3',
+        'id': '103',
         'title': 'Operating Systems | Dr. moahmed',
         'description': 'Operating systems are the foundation of computer science. They are the building blocks of almost all other computer science concepts.',
         'image': 'os.png',
@@ -58,13 +58,30 @@ coursesData = [
 
     
 ]
+allCoursesData = coursesData
+for i in Course.objects.all():
+    print(i.id)
+    allCoursesData.append({
+        'id': i.id,
+        'title': i.title,
+        'description': i.description,
+        'image': i.image,
+        'time': 'NA',
+        'votes': 50,
+        'files': [],
+    })
 
 def allCourses(request):
-    allCoursesData = coursesData
-    # append data from data base
+    
     return render(request, 'allCourses.html', {'courses': coursesData})
 def course(request, course):
-    for i in coursesData:
+    try:
+        res = Course.objects.get(id=course)
+        if res:
+            return render(request, 'course.html', {'course': res})
+    except Course.DoesNotExist:
+        pass
+    for i in allCoursesData:
         if i['id'] == course:
             return render(request, 'course.html', {'course': i})
     return HttpResponse('Course not found')
