@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django import forms
 from .models import Course
+from .forms import CourseForm
 
 # Create your views here.
 
@@ -58,6 +60,8 @@ coursesData = [
 ]
 
 def allCourses(request):
+    allCoursesData = coursesData
+    # append data from data base
     return render(request, 'allCourses.html', {'courses': coursesData})
 def course(request, course):
     for i in coursesData:
@@ -72,3 +76,13 @@ def removeCourse(request, course):
             return HttpResponse('Course removed')
     return HttpResponse('Course not found')
 
+# add course to database addCourse.html
+def addCourse(request):
+    if request.method == 'POST':
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = CourseForm()
+    return render(request, 'addCourse.html', {'form': form})
