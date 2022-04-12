@@ -7,10 +7,12 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/signup/", views.signUpView, name="signup"),
     # path('', views.index, name='index'),
     # path('about/', views.about, name='about'),
     # path('courses/', include('courses.urls'), name='courses'),
     # path('blog/', include('blog.urls'), name='blog'),
     path('', include('courses.urls'), name='courses'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

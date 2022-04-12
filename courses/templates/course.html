@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ course.title }}{% endblock %}
 {% block content %}
+<link rel="stylesheet" href="/static/css/course.css">
   <h3>{{ course.title }}</h3>
   <p>{{ course.description }}</p>
   {% comment %} {% if "by-weeks" == "By-weeks" %}
@@ -11,10 +12,10 @@
   {% else %}
     55
   {% endif %} {% endcomment %}
-  <ul>
+  <ul class="files">
     {% for file in course.files %}
     <li>
-      <a href='{{ file }}'> {{ file }} </a>
+      <a href='{{ file }}'><i class="fas fa-file file-icon"></i> {{ file }} </a>
     </li>
     {% endfor %}
   </ul>
